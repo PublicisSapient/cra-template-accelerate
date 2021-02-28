@@ -1,0 +1,52 @@
+html {
+  background: var(--ra-bg-default);
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ra-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* paddings */
+.p-1 {
+  padding: var(--ra-space-1);
+}
+.p-2 {
+  padding: var(--ra-space-2);
+}
+
+/* headings */
+.h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+}
+
+:root {
+  /* color palette */
+  --ra-grey-100: #fafafa;
+  --ra-grey-200: #343a40;
+
+  /* abstract colors */
+  --ra-bg-default: var(--ra-grey-100);
+  --ra-text-primary: var(--ra-grey-200);
+
+  --ra-space-1: 8px;
+  --ra-space-2: 16px;
+}

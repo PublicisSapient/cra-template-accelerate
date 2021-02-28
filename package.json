@@ -1,0 +1,31 @@
+{
+  "name": "cra-template-accelerate",
+  "description": "Batteries-included template to create React applications",
+  "version": "0.0.1",
+  "author": "Naresh Bhatia",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "typescript"
+  ],
+  "main": "template.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PublicisSapient/cra-template-accelerate.git"
+  },
+  "scripts": {
+    "format": "prettier --write README.md 'template/**/{*.md,*.json,*.ts*}'"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "engines": {
+    "node": ">=10"
+  }
+}

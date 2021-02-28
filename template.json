@@ -1,0 +1,64 @@
+{
+  "package": {
+    "scripts": {
+      "test:coverage": "react-scripts test --coverage --watchAll=false",
+      "cypress:open": "cypress open",
+      "format": "prettier --write README.md 'src/**/{*.md,*.json,*.css,*.ts*}' 'cypress/integration/**/*'",
+      "storybook": "start-storybook -p 6006 -s public",
+      "build-storybook": "build-storybook -s public"
+    },
+    "dependencies": {
+      "history": "5.0.0",
+      "react-router-dom": "^6.0.0-beta.0",
+      "web-vitals": "^1.1.0"
+    },
+    "devDependencies": {
+      "@storybook/addon-actions": "^6.1.20",
+      "@storybook/addon-essentials": "^6.1.20",
+      "@storybook/addon-links": "^6.1.20",
+      "@storybook/node-logger": "^6.1.20",
+      "@storybook/preset-create-react-app": "^3.1.6",
+      "@storybook/react": "^6.1.20",
+      "@testing-library/dom": "^7.29.6",
+      "@testing-library/jest-dom": "^5.11.9",
+      "@testing-library/react": "^11.2.5",
+      "@testing-library/user-event": "^12.7.3",
+      "@types/jest": "^26.0.20",
+      "@types/node": "^14.14.31",
+      "@types/react": "^17.0.2",
+      "@types/react-dom": "^17.0.1",
+      "cypress": "^6.5.0",
+      "husky": "^4.3.8",
+      "prettier": "^2.2.1",
+      "pretty-quick": "^3.1.0",
+      "typescript": "^4.2.2"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "pretty-quick --staged && npm run test:coverage"
+      }
+    },
+    "jest": {
+      "collectCoverageFrom": [
+        "src/**/*.{js,jsx,ts,tsx}",
+        "!src/stories/**",
+        "!src/index.tsx",
+        "!src/reportWebVitals.ts"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "branches": 80,
+          "functions": 80,
+          "lines": 80,
+          "statements": 80
+        }
+      }
+    }
+  }
+}
