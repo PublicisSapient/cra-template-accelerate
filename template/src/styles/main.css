@@ -1,5 +1,9 @@
+/*
+  This is a minimal stylesheet to style starter components with a minimal fuss.
+  Please feel free to replace with your choice of styling mechanism.
+*/
+
 html {
-  background: var(--ra-bg-default);
   box-sizing: border-box;
 }
 
@@ -17,36 +21,43 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--ra-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* paddings */
-.p-1 {
-  padding: var(--ra-space-1);
-}
-.p-2 {
-  padding: var(--ra-space-2);
+main {
+  padding: 16px;
 }
 
-/* headings */
-.h1 {
+h1 {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.2;
   margin: 0 0 8px 0;
 }
 
-:root {
-  /* color palette */
-  --ra-grey-100: #fafafa;
-  --ra-grey-200: #343a40;
+table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
 
-  /* abstract colors */
-  --ra-bg-default: var(--ra-grey-100);
-  --ra-text-primary: var(--ra-grey-200);
+table tr:nth-of-type(2n) {
+  background-color: #f3f3f6;
+}
 
-  --ra-space-1: 8px;
-  --ra-space-2: 16px;
+td,
+th {
+  vertical-align: middle;
+  padding: 0.75rem 0.25rem;
+}
+
+thead {
+  border-bottom: 2px solid #d2d6dd;
+}
+
+.text-center {
+  text-align: center;
 }

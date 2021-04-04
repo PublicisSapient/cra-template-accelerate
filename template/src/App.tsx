@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Home, NotFound } from './features';
+import { Home, NotFound } from './pages';
 
 export const App = () => {
   return (

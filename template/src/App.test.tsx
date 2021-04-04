@@ -2,10 +2,10 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { App } from './App';
-import { Home, NotFound } from './features';
+import { Home, NotFound } from './pages';
 
-jest.mock('./features/Home/Home');
-jest.mock('./features/NotFound/NotFound');
+jest.mock('./pages/Home/Home');
+jest.mock('./pages/NotFound/NotFound');
 
 describe('<App />', () => {
   test('renders the Home page on default route', () => {

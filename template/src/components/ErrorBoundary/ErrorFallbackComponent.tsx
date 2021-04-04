@@ -10,4 +10,10 @@ export interface ErrorFallbackComponentProps {
  */
 export const ErrorFallbackComponent = ({
   error,
-}: ErrorFallbackComponentProps) => <h1>{StringUtils.errorToString(error)}</h1>;
+}: ErrorFallbackComponentProps) => {
+  return (
+    <main>
+      <h1>{StringUtils.errorToString(error)}</h1>
+    </main>
+  );
+};

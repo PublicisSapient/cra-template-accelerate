@@ -2,14 +2,10 @@
 
 exports[`<NotFound /> renders correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="p-2"
-  >
-    <h1
-      class="h1"
-    >
+  <main>
+    <h1>
       Page Not Found
     </h1>
-  </div>
+  </main>
 </DocumentFragment>
 `;

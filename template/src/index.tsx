@@ -2,17 +2,26 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from './App';
-import { ErrorBoundary } from './components';
+import { ErrorBoundary, Loading } from './components';
+import { EnvProvider } from './contexts';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
+import './styles/main.css';
+
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./mocks/browser');
+  worker.start();
+  worker.printHandlers();
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback={<h1>Loading...</h1>}>
+    <Suspense fallback={<Loading />}>
       <ErrorBoundary>
-        <Router>
-          <App />
-        </Router>
+        <EnvProvider>
+          <Router>
+            <App />
+          </Router>
+        </EnvProvider>
       </ErrorBoundary>
     </Suspense>
   </React.StrictMode>,

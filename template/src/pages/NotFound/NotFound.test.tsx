@@ -1,6 +1,6 @@
 import React from 'react';
-import { NotFound } from './NotFound';
 import { render } from '@testing-library/react';
+import { NotFound } from './NotFound';
 
 describe('<NotFound />', () => {
   test('renders correctly', () => {
