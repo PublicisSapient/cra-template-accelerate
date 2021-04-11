@@ -1,10 +1,8 @@
 import { Env, WindowEnv } from './Env';
 
 // Set username in window environment
-const USERNAME = 'USERNAME';
-const usernameValue = 'john';
 (window as any)._env_ = {
-  USERNAME: usernameValue,
+  USERNAME: 'john',
 };
 
 const env: Env = new WindowEnv();
@@ -12,7 +10,7 @@ const env: Env = new WindowEnv();
 describe('Env', () => {
   describe('get()', () => {
     it('return value if environment variable exists', () => {
-      expect(env.get(USERNAME)).toEqual(usernameValue);
+      expect(env.get('USERNAME')).toEqual('john');
     });
 
     it('return default value if environment variable does not exists', () => {

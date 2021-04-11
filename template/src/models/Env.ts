@@ -10,7 +10,8 @@ export interface Env {
  */
 export class WindowEnv implements Env {
   get(varName: string, defaultValue?: string): string {
-    const value = (window as any)._env_[varName];
+    const value =
+      window && (window as any)._env_ && (window as any)._env_[varName];
     if (value !== undefined) {
       return value;
     } else if (defaultValue !== undefined) {
