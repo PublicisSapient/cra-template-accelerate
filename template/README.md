@@ -9,7 +9,7 @@ best practices.
 
 Clone the repo listed below to see a small example of how to use this template:
 
-[React Accelerate Minimal Example](https://github.com/PublicisSapient/react-accelerate-minimal-example)
+[Accelerated News](https://github.com/PublicisSapient/accelerated-news)
 
 ## Features
 
