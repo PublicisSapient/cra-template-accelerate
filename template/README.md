@@ -23,7 +23,26 @@ Clone the repo listed below to see a small example of how to use this template:
    - [React Testing Library](https://testing-library.com/) for unit testing
    - [Cypress](https://www.cypress.io/) for end-to-end testing
    - [Husky](https://typicode.github.io/husky) to improve the quality of commits
+   - [Mock Service Worker](https://mswjs.io/) to mock HTTP requests
    - [Prettier](https://prettier.io/) to format code consistently
+5. Some useful starter components:
+   - **ErrorBoundary**: A component to catch JavaScript errors anywhere in its
+     child component tree and display a fallback UI.
+   - **Loading**: A placeholder loading component
+   - **EnvProvider**: Provides a mechanism for loading environment variables
+     dynamically by placing an environment file (`env.js`) in the `/public`
+     folder. This allows a single build to be used across multiple environments
+     such as develop, qa, uat & prod.
+   - **Home**: A simple page showing end-to-end flow from client to server. It
+     makes an HTTP request to the server, which is intercepted by Mock Service
+     Worker (in development mode) and displays a list of movies. The unit test
+     for this page does not have to do any jest level mocking, demonstrating the
+     power of MSW.
+   - **NotFound**: A placeholder NotFound page
+   - **Sample Storybook Stories**: Showing best practices in Storybook
+   - **Unit Testing**: Utility functions to make testing easier. Also, some
+     sample tests to show best practices.
+   - **End-to-End Testing**: Sample Cypress tests to show best practices.
 
 ## Getting Started
 
