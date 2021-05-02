@@ -1,6 +1,7 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { EnvProvider } from '../src/contexts';
 import '../src/styles/main.css';
 
 export const parameters = {
@@ -12,10 +13,17 @@ export const parameters = {
   },
 };
 
+// Start mock service worker
+const { worker } = require('../src/mocks/browser');
+worker.start();
+worker.printHandlers();
+
 const StoryDecorator = (Story: any) => (
-  <Router>
-    <Story />
-  </Router>
+  <EnvProvider>
+    <Router>
+      <Story />
+    </Router>
+  </EnvProvider>
 );
 
 addDecorator(StoryDecorator);
