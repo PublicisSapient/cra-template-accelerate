@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ErrorFallbackComponent } from '../../components';
+import { ErrorFallbackComponent } from './ErrorFallbackComponent';
 
 export default {
   title: 'Components/ErrorFallbackComponent',

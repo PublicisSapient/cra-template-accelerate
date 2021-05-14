@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { mockMovies } from '../../mocks/mockMovies';
-import { MovieList } from '../../pages/Home/MovieList';
+import { MovieList } from './MovieList';
 
 export default {
   title: 'Pages/Home',

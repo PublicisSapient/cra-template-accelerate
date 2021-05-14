@@ -10,7 +10,6 @@ React Accelerate recommends using the following folder structure for your app:
   /models
   /pages
   /services
-  /stories
   /styles
   /test
   /utils
@@ -78,10 +77,6 @@ Contains models (data structures) used by multiple features.
 ### services
 
 Contains service functions (api calls, hooks etc.) used by multiple features.
-
-### stories
-
-Contains Storybook stories for the entire app, organized in different folders.
 
 ### styles
 
