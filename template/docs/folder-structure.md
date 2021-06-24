@@ -28,15 +28,15 @@ From an implementation perspective, it is important to keep each feature
 independent of the others. This implies that any models (data structures),
 components, contexts and services needed by the feature should be contained
 within the associated page folder. For example, the diagram below shows some
-files that may be contained in the "Headlines" page folder:
+files that may be contained in the `HeadlinesPage` folder:
 
 ```
 /src
   /pages
-    /Headlines
-      headlines components
-      headlines contexts
-      headlines models
+    /HeadlinesPage
+      headlines page components
+      headlines page contexts
+      headlines page models
       ...
 ```
 

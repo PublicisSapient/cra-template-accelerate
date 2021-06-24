@@ -4,7 +4,7 @@ import { StringUtils } from '../../utils';
 import { MovieList } from './MovieList';
 import { useMovies } from './useMovies';
 
-export const Home = () => {
+export const HomePage = () => {
   const { isLoading, isError, error, movies } = useMovies();
 
   if (isLoading) {

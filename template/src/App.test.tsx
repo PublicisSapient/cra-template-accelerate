@@ -2,15 +2,15 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { App } from './App';
-import { Home, NotFound } from './pages';
+import { HomePage, NotFoundPage } from './pages';
 
-jest.mock('./pages/Home/Home');
-jest.mock('./pages/NotFound/NotFound');
+jest.mock('./pages/HomePage/HomePage');
+jest.mock('./pages/NotFoundPage/NotFoundPage');
 
 describe('<App />', () => {
   test('renders the Home page on default route', () => {
     // Arrange
-    (Home as jest.Mock).mockImplementation(() => <div>HomePageMock</div>);
+    (HomePage as jest.Mock).mockImplementation(() => <div>HomePageMock</div>);
 
     // Act
     const { getByText } = render(
@@ -25,7 +25,9 @@ describe('<App />', () => {
 
   test('renders the Not Found page for an invalid route', () => {
     // Arrange
-    (NotFound as jest.Mock).mockImplementation(() => <div>NotFoundMock</div>);
+    (NotFoundPage as jest.Mock).mockImplementation(() => (
+      <div>NotFoundMock</div>
+    ));
 
     // Act
     const { getByText } = render(

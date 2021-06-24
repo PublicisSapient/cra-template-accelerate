@@ -1,4 +1,4 @@
-import { Movie } from '../pages/Home';
+import { Movie } from '../pages/HomePage';
 
 export const mockMovies: Array<Movie> = [
   {

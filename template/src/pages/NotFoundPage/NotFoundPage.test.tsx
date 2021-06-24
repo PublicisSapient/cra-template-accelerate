@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { NotFound } from './NotFound';
+import { NotFoundPage } from './NotFoundPage';
 
 describe('<NotFound />', () => {
   test('renders correctly', () => {
@@ -26,7 +26,7 @@ describe('<NotFound />', () => {
     // properties and other details that are not relevant.
     // -----------------------------------------------------------------
 
-    const { asFragment } = render(<NotFound />);
+    const { asFragment } = render(<NotFoundPage />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
