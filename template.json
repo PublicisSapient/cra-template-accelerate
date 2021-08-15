@@ -5,40 +5,51 @@
       "test:update": "react-scripts test --watchAll=false --updateSnapshot",
       "cypress:open": "cypress open",
       "format": "prettier --write README.md \"src/**/{*.md,*.json,*.css,*.ts*}\" \"cypress/integration/**/*\"",
+      "lint": "eslint src",
       "storybook": "start-storybook -p 6006 -s public",
       "build-storybook": "build-storybook -s public"
     },
     "dependencies": {
-      "history": "5.0.0",
-      "react-router-dom": "^6.0.0-beta.0",
+      "history": "5.0.1",
+      "react-router-dom": "^6.0.0-beta.1",
       "web-vitals": "^1.1.2"
     },
     "devDependencies": {
-      "@storybook/addon-actions": "^6.3.0",
-      "@storybook/addon-essentials": "^6.3.0",
-      "@storybook/addon-links": "^6.3.0",
-      "@storybook/node-logger": "^6.3.0",
-      "@storybook/preset-create-react-app": "^3.1.7",
-      "@storybook/react": "^6.3.0",
-      "@testing-library/dom": "^8.0.0",
+      "@storybook/addon-actions": "^6.3.7",
+      "@storybook/addon-essentials": "^6.3.7",
+      "@storybook/addon-links": "^6.3.7",
+      "@storybook/node-logger": "^6.3.7",
+      "@storybook/preset-create-react-app": "^3.2.0",
+      "@storybook/react": "^6.3.7",
+      "@testing-library/dom": "^8.1.0",
       "@testing-library/jest-dom": "^5.14.1",
       "@testing-library/react": "^12.0.0",
-      "@testing-library/user-event": "^13.1.9",
-      "@types/jest": "^26.0.23",
-      "@types/node": "^15.12.4",
-      "@types/react": "^17.0.11",
-      "@types/react-dom": "^17.0.8",
-      "cypress": "^7.6.0",
+      "@testing-library/user-event": "^13.2.1",
+      "@types/jest": "^27.0.1",
+      "@types/node": "^16.6.1",
+      "@types/react": "^17.0.18",
+      "@types/react-dom": "^17.0.9",
+      "cypress": "^8.2.0",
       "husky": "^4.3.8",
-      "msw": "^0.29.0",
-      "prettier": "^2.3.1",
+      "msw": "^0.34.0",
+      "prettier": "^2.3.2",
       "pretty-quick": "^3.1.1",
-      "typescript": "^4.3.4"
+      "typescript": "^4.3.5"
     },
     "eslintConfig": {
       "extends": [
         "react-app",
         "react-app/jest"
+      ],
+      "rules": {
+      },
+      "overrides": [
+        {
+          "files": ["**/*.ts?(x)"],
+          "rules": {
+            "@typescript-eslint/no-unused-vars": "error"
+          }
+        }
       ]
     },
     "husky": {
