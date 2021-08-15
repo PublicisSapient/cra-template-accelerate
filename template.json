@@ -4,7 +4,7 @@
       "test:coverage": "react-scripts test --coverage --watchAll=false",
       "test:update": "react-scripts test --watchAll=false --updateSnapshot",
       "cypress:open": "cypress open",
-      "format": "prettier --write README.md 'src/**/{*.md,*.json,*.css,*.ts*}' 'cypress/integration/**/*'",
+      "format": "prettier --write README.md \"src/**/{*.md,*.json,*.css,*.ts*}\" \"cypress/integration/**/*\"",
       "storybook": "start-storybook -p 6006 -s public",
       "build-storybook": "build-storybook -s public"
     },
