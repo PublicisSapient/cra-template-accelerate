@@ -12,7 +12,7 @@ export const useMovies = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState<Error | undefined>();
+  const [error, setError] = useState<unknown>();
   const [movies, setMovies] = useState<Array<Movie>>([]);
 
   useEffect(() => {

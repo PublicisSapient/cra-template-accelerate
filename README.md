@@ -1,9 +1,9 @@
-# cra-template-accelerate
+# React Accelerate
 
-This template is based on
-[Create React App](https://github.com/facebook/create-react-app). It is designed
-to accelerate React application development by providing guidance, libraries and
-tools to encourage you to write web applications using best practices.
+A batteries-included template for creating production quality React apps. Based
+on [Create React App](https://github.com/facebook/create-react-app), this
+template is designed to accelerate React application development by providing
+guidance, libraries and tools to write web applications using best practices.
 
 ## Features
 
