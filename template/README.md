@@ -14,7 +14,7 @@ Clone the repo listed below to see a small example of how to use this template:
 ## Features
 
 1. TypeScript based - for type safety
-2. [Opinionated folder structure](docs/folder-structure.md)
+2. [Opinionated folder structure](https://github.com/nareshbhatia/react-learning-resources/blob/main/docs/folder-structure.md)
 3. Foundational libraries
    - [React Router](https://reactrouter.com/)
 4. Essential tools
@@ -47,7 +47,8 @@ Clone the repo listed below to see a small example of how to use this template:
 ## Getting Started
 
 Make sure your development machine is set up for building React apps. See the
-recommended setup procedure [here](docs/dev-machine-setup.md).
+recommended setup procedure
+[here](https://github.com/nareshbhatia/react-learning-resources/blob/main/docs/mac-setup.md).
 
 Execute the following commands to install dependencies:
 
@@ -126,10 +127,4 @@ npm run format
 
 ## Learn More
 
-- [React Accelerate Documentation](docs)
-- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
-- [React documentation](https://reactjs.org/)
-- [How to know what to test](https://kentcdodds.com/blog/how-to-know-what-to-test)
-- [Write tests. Not too many. Mostly integration.](https://kentcdodds.com/blog/write-tests)
-- [State Colocation - Where to Put State](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)
-- [How to use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
+- [React Learning Resources](https://github.com/nareshbhatia/react-learning-resources)

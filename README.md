@@ -74,6 +74,4 @@ yarn
 
 ## Learn More
 
-- [Detailed documentation](template/README.md)
 - [Create React App - Getting Started](https://create-react-app.dev/docs/getting-started)
-- [Create React App - User Guide](https://create-react-app.dev)
