@@ -48,9 +48,9 @@ Clone the repo listed below to see a small example of how to use this template:
 
 Make sure your development machine is set up for building React apps. See the
 recommended setup procedure
-[here](https://github.com/nareshbhatia/react-learning-resources/blob/main/docs/mac-setup.md).
+[here](https://github.com/nareshbhatia/react-learning-resources#developer-machine-setup).
 
-Execute the following commands to install dependencies:
+Then execute the following commands to install dependencies:
 
 ```sh
 # if using npm v7 add --legacy-peer-deps option
