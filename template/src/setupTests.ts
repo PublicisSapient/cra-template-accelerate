@@ -3,12 +3,11 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+import { MOCK_API_URL } from './mocks/constants';
 import { server } from './mocks/server';
 
 // ----- Set API_URL in window environment -----
-(window as any)._env_ = {
-    API_URL: 'http://localhost:8080',
-};
+(window as any)._env_ = { API_URL: MOCK_API_URL };
 
 // ----- Set up Mock Service Worker -----
 // Establish API mocking before all tests.
