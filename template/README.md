@@ -7,9 +7,10 @@ and is designed to accelerate React application development by providing
 guidance, libraries and tools to encourage you to write web applications using
 best practices.
 
-Clone the repo listed below to see a small example of how to use this template:
+Clone the repos listed below to see examples of how to use this template:
 
-[Accelerated News](https://github.com/PublicisSapient/accelerated-news)
+1. [Accelerated News](https://github.com/PublicisSapient/accelerated-news)
+2. [React Testing Techniques](https://github.com/nareshbhatia/react-testing-techniques)
 
 ## Features
 

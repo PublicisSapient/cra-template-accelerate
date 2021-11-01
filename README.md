@@ -75,3 +75,4 @@ yarn
 ## Learn More
 
 - [Create React App - Getting Started](https://create-react-app.dev/docs/getting-started)
+- [React Learning Resources](https://github.com/nareshbhatia/react-learning-resources)
