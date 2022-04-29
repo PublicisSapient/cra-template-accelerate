@@ -15,12 +15,16 @@ function useEnv(): Env {
 /**
  * Provides an instance of WindowEnv
  */
-const EnvProvider: React.FC = ({ children }) => {
+interface EnvProviderProps {
+  children?: React.ReactNode;
+}
+
+function EnvProvider({ children }: EnvProviderProps) {
   return (
     <EnvContext.Provider value={new WindowEnv()}>
       {children}
     </EnvContext.Provider>
   );
-};
+}
 
 export { EnvProvider, useEnv };

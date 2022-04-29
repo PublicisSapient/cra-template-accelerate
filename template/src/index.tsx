@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from './App';
 import { ErrorBoundary, Loading } from './components';
@@ -14,7 +14,10 @@ if (process.env.NODE_ENV === 'development') {
   worker.printHandlers();
 }
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+root.render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
       <ErrorBoundary>
@@ -25,8 +28,7 @@ ReactDOM.render(
         </EnvProvider>
       </ErrorBoundary>
     </Suspense>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

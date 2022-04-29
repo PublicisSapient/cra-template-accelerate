@@ -52,7 +52,7 @@ describe('<ErrorBoundary />', () => {
     );
     expect(screen.queryByText(goodBoyText)).not.toBeInTheDocument();
     expect(screen.getByText(badBoyText)).toBeInTheDocument();
-    expect(console.error).toHaveBeenCalledTimes(2);
+    expect(console.error).toHaveBeenCalledTimes(3);
   });
 
   test('logs the error when the child throws an error', () => {
@@ -65,7 +65,7 @@ describe('<ErrorBoundary />', () => {
     );
     expect(screen.queryByText(goodBoyText)).not.toBeInTheDocument();
     expect(screen.getByText(badBoyText)).toBeInTheDocument();
-    expect(console.error).toHaveBeenCalledTimes(2);
+    expect(console.error).toHaveBeenCalledTimes(3);
     expect(logError).toHaveBeenCalledTimes(1);
   });
 });

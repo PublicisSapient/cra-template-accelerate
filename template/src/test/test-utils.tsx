@@ -14,7 +14,11 @@ import { EnvProvider } from '../contexts';
 // https://testing-library.com/docs/react-testing-library/setup/#custom-render
 // -----------------------------------------------------------------------------
 
-const AllProviders: React.FC = ({ children }) => {
+interface AllProvidersProps {
+  children?: React.ReactNode;
+}
+
+function AllProviders({ children }: AllProvidersProps) {
   return (
     <Suspense fallback={<Loading />}>
       <ErrorBoundary>
@@ -24,7 +28,7 @@ const AllProviders: React.FC = ({ children }) => {
       </ErrorBoundary>
     </Suspense>
   );
-};
+}
 
 /**
  * Custom render method that includes global context providers

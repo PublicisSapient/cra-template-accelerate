@@ -52,24 +52,69 @@ npx create-react-app my-app --template accelerate
 yarn create react-app my-app --template accelerate
 ```
 
-Once the new app is created, you must reinstall the dependencies to make sure
-that husky's git hooks are installed properly. Unfortunately the hooks do not
-get installed during the execution of the above commands.
+Once the new app is created, you must reinstall the dependencies for two
+reasons:
+
+1. To make sure that husky's git hooks are installed properly. Unfortunately the
+   hooks do not get installed during the execution of the above commands.
+
+2. The current version of Storybook is incompatible with React 18. The steps
+   below use a workaround to install storybook.
+
+To reinstall dependencies using npm, follow the steps below:
+
+### Step 1: Add Storybook dependencies
+
+Add the following Storybook dependencies in `my-app/package.json` at the
+beginning of the `devDependencies` section:
+
+```
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "next",
+    "@storybook/addon-essentials": "next",
+    "@storybook/addon-interactions": "next",
+    "@storybook/addon-links": "next",
+    "@storybook/builder-webpack5": "next",
+    "@storybook/manager-webpack5": "next",
+    "@storybook/node-logger": "next",
+    "@storybook/preset-create-react-app": "^4.1.0",
+    "@storybook/react": "next",
+    "@storybook/testing-library": "^0.0.11",
+```
+
+### Step 2: Reinstall Dependencies
 
 To reinstall dependencies using npm, run the following commands:
 
 ```sh
 cd my-app
-rm package-lock.json node_modules
-npm install
+rm -rf package-lock.json node_modules
+npm install --legacy-peer-deps
 ```
 
 To reinstall dependencies using yarn, run the following commands:
 
 ```sh
 cd my-app
-rm yarn.lock node_modules
+rm -rf yarn.lock node_modules
 yarn
+```
+
+### Step 3: Test your installation
+
+```sh
+npm start # sample app shows up in your browser at http://localhost:3000/
+npm run storybook # storybook starts up at http://localhost:6006/
+npm run test:coverage # test suites runs successfully
+```
+
+## Testing the template locally
+
+To test this template locally, use the following commands:
+
+```sh
+cd ..
+npx create-react-app test-app --template file:./cra-template-accelerate
 ```
 
 ## Learn More

@@ -54,9 +54,7 @@ recommended setup procedure
 Then execute the following commands to install dependencies:
 
 ```sh
-# if using npm v7 add --legacy-peer-deps option
-# see details here: https://github.com/storybookjs/storybook/issues/12983
-npm install
+npm install --legacy-peer-deps
 ```
 
 Now execute the following commands to run the app:
@@ -107,7 +105,7 @@ Cypress using the following commands:
 npm start # starts a local server hosting your react app
 
 # run cypress in a different shell
-npm run cypress:open
+npm run cypress
 ```
 
 ## Code Formatting
