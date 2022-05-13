@@ -87,7 +87,28 @@ beginning of the `devDependencies` section:
     "@storybook/testing-library": "^0.0.11",
 ```
 
-### Step 2: Reinstall Dependencies
+### Step 2: Update the scripts section
+
+Replace the `scripts` section in the same file (`my-app/package.json`) with the block below. We are just making minor adjustments for readability and a better workflow:
+
+```
+  "scripts": {
+    "build": "react-scripts build",
+    "build-storybook": "build-storybook -s public",
+    "cypress:open": "cypress open",
+    "eject": "react-scripts eject",
+    "format": "prettier --write README.md \"src/**/{*.md,*.json,*.css,*.ts*}\" \"cypress/integration/**/*\"",
+    "lint": "eslint src",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 6006 -s public",
+    "test": "npm run lint && npm run test:coverage",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "test:update": "react-scripts test --watchAll=false --updateSnapshot",
+    "test:watch": "react-scripts test"
+  },
+```
+
+### Step 3: Reinstall Dependencies
 
 To reinstall dependencies using npm, run the following commands:
 
@@ -105,7 +126,7 @@ rm -rf yarn.lock node_modules
 yarn
 ```
 
-### Step 3: Test your installation
+### Step 4: Test your installation
 
 ```sh
 npm start # sample app shows up in your browser at http://localhost:3000/
@@ -113,7 +134,7 @@ npm run storybook # storybook starts up at http://localhost:6006/
 npm run test:coverage # test suites runs successfully
 ```
 
-### Step 4: Commit your changes
+### Step 5: Commit your changes
 
 ```sh
 git add .
