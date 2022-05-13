@@ -42,11 +42,12 @@ guidance, libraries and tools to write web applications using best practices.
 
 Run the following commands to create your React app in a local Git repository.
 
-- Replace `~/projects` with whatever location you use for saving your projects.
-- Replace 'my-app' with the real name of your app, e.g. 'movie-magic'.
-- You can use npm or yarn based on your preference.
-
 ```sh
+# Notes:
+# - Replace `~/projects` with whatever location you use for saving your projects
+# - Replace 'my-app' with the real name of your app, e.g. 'movie-magic'
+# - Use npx or yarn based on your preference
+
 cd ~/projects
 
 npx create-react-app my-app --template accelerate
