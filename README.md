@@ -40,11 +40,15 @@ guidance, libraries and tools to write web applications using best practices.
 
 ## Getting Started
 
-To use this template, add `--template accelerate` when creating a new app.
+Run the following commands to create your React app in a local Git repository.
 
-For example:
+- Replace `~/projects` with whatever location you use for saving your projects.
+- Replace 'my-app' with the real name of your app, e.g. 'movie-magic'.
+- You can use npm or yarn based on your preference.
 
 ```sh
+cd ~/projects
+
 npx create-react-app my-app --template accelerate
 
 # or
@@ -52,16 +56,16 @@ npx create-react-app my-app --template accelerate
 yarn create react-app my-app --template accelerate
 ```
 
-Once the new app is created, you must reinstall the dependencies for two
-reasons:
+Once the new app is created, you must reinstall the dependencies. There are two
+reasons for this:
 
-1. To make sure that husky's git hooks are installed properly. Unfortunately the
+1. Make sure that husky's git hooks are installed properly. Unfortunately the
    hooks do not get installed during the execution of the above commands.
 
 2. The current version of Storybook is incompatible with React 18. The steps
    below use a workaround to install storybook.
 
-To reinstall dependencies using npm, follow the steps below:
+Follow the steps below:
 
 ### Step 1: Add Storybook dependencies
 
@@ -108,7 +112,14 @@ npm run storybook # storybook starts up at http://localhost:6006/
 npm run test:coverage # test suites runs successfully
 ```
 
-## Testing the template locally
+### Step 4: Commit your changes
+
+```sh
+git add .
+git commit -m "Added storybook"
+```
+
+## Testing the template locally (for template developers)
 
 To test this template locally, use the following commands:
 
