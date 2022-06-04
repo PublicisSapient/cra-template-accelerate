@@ -54,7 +54,7 @@ recommended setup procedure
 Then execute the following commands to install dependencies:
 
 ```sh
-npm install --legacy-peer-deps
+npm install
 ```
 
 Now execute the following commands to run the app:
@@ -89,8 +89,8 @@ React Accelerate comes ready with Jest and React Testing Library to run unit
 tests. Execute one of the following command to run unit tests.
 
 ```sh
-npm run test # interactive mode
-npm run test:coverage # non-interactive mode with coverage information
+npm run test # run tests with code coverage
+npm run test:watch # run tests in interactive mode
 ```
 
 Note that unit tests are automatically executed when you commit code to your

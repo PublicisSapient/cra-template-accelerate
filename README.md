@@ -63,8 +63,7 @@ reasons for this:
 1. Make sure that husky's git hooks are installed properly. Unfortunately the
    hooks do not get installed during the execution of the above commands.
 
-2. The current version of Storybook is incompatible with React 18. The steps
-   below use a workaround to install storybook.
+2. Installing Storybook is a bit finicky. The steps below install it manually.
 
 Follow the steps below:
 
@@ -75,30 +74,33 @@ beginning of the `devDependencies` section:
 
 ```
     "@mdx-js/react": "^1.6.22",
-    "@storybook/addon-actions": "next",
-    "@storybook/addon-essentials": "next",
-    "@storybook/addon-interactions": "next",
-    "@storybook/addon-links": "next",
-    "@storybook/builder-webpack5": "next",
-    "@storybook/manager-webpack5": "next",
-    "@storybook/node-logger": "next",
-    "@storybook/preset-create-react-app": "^4.1.0",
-    "@storybook/react": "next",
+    "@storybook/addon-a11y": "^6.5.6",
+    "@storybook/addon-actions": "^6.5.6",
+    "@storybook/addon-essentials": "^6.5.6",
+    "@storybook/addon-interactions": "^6.5.6",
+    "@storybook/addon-links": "^6.5.6",
+    "@storybook/builder-webpack5": "^6.5.6",
+    "@storybook/manager-webpack5": "^6.5.6",
+    "@storybook/node-logger": "^6.5.6",
+    "@storybook/react": "^6.5.6",
     "@storybook/testing-library": "^0.0.11",
 ```
 
 ### Step 2: Update the scripts section
 
-Replace the `scripts` section in the same file (`my-app/package.json`) with the block below. We are just making minor adjustments for readability and a better workflow:
+Replace the `scripts` section in the same file (`my-app/package.json`) with the
+block below. We are just making minor adjustments for readability and a better
+workflow:
 
 ```
   "scripts": {
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public",
-    "cypress:open": "cypress open",
+    "cypress": "cypress open",
     "eject": "react-scripts eject",
     "format": "prettier --write README.md \"src/**/{*.md,*.json,*.css,*.ts*}\" \"cypress/integration/**/*\"",
     "lint": "eslint src",
+    "prepare": "husky install",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 6006 -s public",
     "test": "npm run lint && npm run test:coverage",
@@ -108,14 +110,39 @@ Replace the `scripts` section in the same file (`my-app/package.json`) with the 
   },
 ```
 
-### Step 3: Reinstall Dependencies
+### Step 3: Yarn users only
+
+Find the `overrides` section in the same file (`my-app/package.json`). Note that
+there will be two matches for `overrides`, but you are looking for the section
+below:
+
+```
+  "overrides": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-refresh": "0.13.0"
+  },
+```
+
+Replace the word `overrides` with `resolutions`. This is the yarn equivalent for
+npm `overrides`. The new section should look like this:
+
+```
+  "resolutions": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-refresh": "0.13.0"
+  },
+```
+
+### Step 4: Reinstall Dependencies
 
 To reinstall dependencies using npm, run the following commands:
 
 ```sh
 cd my-app
 rm -rf package-lock.json node_modules
-npm install --legacy-peer-deps
+npm install
 ```
 
 To reinstall dependencies using yarn, run the following commands:
@@ -126,15 +153,15 @@ rm -rf yarn.lock node_modules
 yarn
 ```
 
-### Step 4: Test your installation
+### Step 5: Test your installation
 
 ```sh
 npm start # sample app shows up in your browser at http://localhost:3000/
 npm run storybook # storybook starts up at http://localhost:6006/
-npm run test:coverage # test suites runs successfully
+npm run test # test suites runs successfully
 ```
 
-### Step 5: Commit your changes
+### Step 6: Commit your changes
 
 ```sh
 git add .
