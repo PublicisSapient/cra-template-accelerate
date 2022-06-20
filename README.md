@@ -42,7 +42,7 @@ guidance, libraries and tools to write web applications using best practices.
 
 Run the following commands to create your React app in a local Git repository.
 
-```sh
+```shell
 # Notes:
 # - Replace `~/projects` with whatever location you use for saving your projects
 # - Replace 'my-app' with the real name of your app, e.g. 'movie-magic'
@@ -69,24 +69,38 @@ Follow the steps below:
 
 ### Step 1: Add Storybook dependencies
 
-Add the following Storybook dependencies in `my-app/package.json` at the
-beginning of the `devDependencies` section:
+Add the following Storybook dependencies in `my-app/package.json` to the
+`devDependencies` section. It is preferable to keep this section in alphabetic
+order. (This also applies to the `dependencies` section.)
 
 ```
-    "@mdx-js/react": "^1.6.22",
-    "@storybook/addon-a11y": "^6.5.6",
-    "@storybook/addon-actions": "^6.5.6",
-    "@storybook/addon-essentials": "^6.5.6",
-    "@storybook/addon-interactions": "^6.5.6",
-    "@storybook/addon-links": "^6.5.6",
-    "@storybook/builder-webpack5": "^6.5.6",
-    "@storybook/manager-webpack5": "^6.5.6",
-    "@storybook/node-logger": "^6.5.6",
-    "@storybook/react": "^6.5.6",
-    "@storybook/testing-library": "^0.0.11",
+    "@storybook/addon-a11y": "^6.5.9",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/node-logger": "^6.5.9",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
 ```
 
-### Step 2: Update the scripts section
+### Step 2: Move react-scripts to devDependencies
+
+This is a nit! Create React App adds `react-scripts` to the dependencies section
+in `my-app/package.json`. Move it to the `devDependencies` section:
+
+```
+  "devDependencies": {
+    ...
+    "react-scripts": "5.0.1",
+    ...
+  },
+```
+
+### Step 3: Update the scripts section
 
 Replace the `scripts` section in the same file (`my-app/package.json`) with the
 block below. We are just making minor adjustments for readability and a better
@@ -110,60 +124,71 @@ workflow:
   },
 ```
 
-### Step 3: Yarn users only
+### Step 4: Add dependency overrides
 
-Find the `overrides` section in the same file (`my-app/package.json`). Note that
-there will be two matches for `overrides`, but you are looking for the section
-below:
+This template uses the latest version of React - version 18. Many third party
+libraries still haven't switched their dependencies to this version. Hence, we
+need to force the React version to 18. Look up the version of React that was
+generated in the `dependencies` section. Use this same version in the
+instructions below. At the time of this writing the latest version is 18.2.0.
+
+#### npm users
+
+Find the `devDependencies` section in `my-app/package.json` and insert an
+`overrides` section just below it as shown below:
 
 ```
   "overrides": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-refresh": "0.13.0"
   },
 ```
 
-Replace the word `overrides` with `resolutions`. This is the yarn equivalent for
-npm `overrides`. The new section should look like this:
+#### yarn users
+
+Find the `devDependencies` section in `my-app/package.json` and insert a
+`resolutions` section just below it as shown below:
 
 ```
   "resolutions": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-refresh": "0.13.0"
   },
 ```
 
-### Step 4: Reinstall Dependencies
+### Step 5: Reinstall Dependencies
 
-To reinstall dependencies using npm, run the following commands:
+#### npm users
 
-```sh
+```shell
 cd my-app
 rm -rf package-lock.json node_modules
 npm install
 ```
 
-To reinstall dependencies using yarn, run the following commands:
+#### yarn users
 
-```sh
+```shell
 cd my-app
 rm -rf yarn.lock node_modules
 yarn
 ```
 
-### Step 5: Test your installation
+### Step 6: Test your installation
 
-```sh
+> Yarn users: substitute `npm` with `yarn`.
+
+```shell
 npm start # sample app shows up in your browser at http://localhost:3000/
 npm run storybook # storybook starts up at http://localhost:6006/
-npm run test # test suites runs successfully
+npm test # test suites runs successfully
 ```
 
 ### Step 6: Commit your changes
 
-```sh
+```shell
 git add .
 git commit -m "Added storybook"
 ```
@@ -172,7 +197,7 @@ git commit -m "Added storybook"
 
 To test this template locally, use the following commands:
 
-```sh
+```shell
 cd ..
 npx create-react-app test-app --template file:./cra-template-accelerate
 ```
